@@ -1,0 +1,39 @@
+ <header class="fixed top-0 left-0 w-full z-50 bg-[#121212]/80 backdrop-blur-md border-b border-white/10">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/home#about" class="text-2xl  text-white font-['Pacifico']">amer habanakeh</a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="/home#about" class="text-white/80 hover:text-primary transition-colors">About</a>
+                <a href="/home#skills" class="text-white/80 hover:text-primary transition-colors">Skills</a>
+                <a href="/home#projects" class="text-white/80 hover:text-primary transition-colors">Projects</a>
+                <a href="/home#experience" class="text-white/80 hover:text-primary transition-colors">Experience</a>
+                <a href="/home#contact" class="text-white/80 hover:text-primary transition-colors">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <!-- <label class="relative inline-block">
+                    <input type="checkbox" class="theme-toggle" id="themeToggle">
+                    <span class="ml-2 text-sm text-white/60">Dark</span>
+                </label> -->
+                <a href="/cv.pdf" download="Amer Habanakeh Frontend Angular.pdf" class="hidden md:block bg-transparent border border-primary text-primary hover:bg-primary hover:text-[#121212] transition-colors px-4 py-2 !rounded-button whitespace-nowrap">Download CV</a>
+                <button (click)="isMenuHidden.set(!isMenuHidden())" class="md:hidden w-10 h-10 flex items-center justify-center text-white" id="mobileMenuBtn">
+                    @if(isMenuHidden()){
+                        <i class="ri-menu-line ri-lg"></i>
+                    }@else{
+                        <i class="ri-close-line ri-lg"></i>
+                    }
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden {{isMenuHidden()?'hidden':''}} bg-[#121212]/95 backdrop-blur-md absolute w-full left-0 top-full border-b border-white/10" id="mobileMenu">
+            <div class="container mx-auto px-6 py-4">
+                <nav class="flex flex-col space-y-4">
+                    <a (click)="isMenuHidden.set(true)" href="/home#about" class="text-white/80 hover:text-primary transition-colors py-2">About</a>
+                    <a (click)="isMenuHidden.set(true)" href="/home#skills" class="text-white/80 hover:text-primary transition-colors py-2">Skills</a>
+                    <a (click)="isMenuHidden.set(true)" href="/home#projects" class="text-white/80 hover:text-primary transition-colors py-2">Projects</a>
+                    <a (click)="isMenuHidden.set(true)" href="/home#experience" class="text-white/80 hover:text-primary transition-colors py-2">Experience</a>
+                    <a (click)="isMenuHidden.set(true)" href="/home#contact" class="text-white/80 hover:text-primary transition-colors py-2">Contact</a>
+                    <a (click)="isMenuHidden.set(true)" href="/cv.pdf" download="Ahmad Al-Hamwi Frontend Angular.pdf" class="bg-transparent border border-primary text-primary hover:bg-primary hover:text-[#121212] transition-colors px-4 py-2 !rounded-button whitespace-nowrap text-center mt-4">Download CV</a>
+                </nav>
+            </div>
+        </div>
+</header>

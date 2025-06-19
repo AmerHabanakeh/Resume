@@ -19,6 +19,7 @@
           "options": {
             "outputPath": "dist/portfolio",
             "index": "src/index.html",
+
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
@@ -26,15 +27,20 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+           
               {
                 "glob": "**/*",
                 "input": "public"
               }
             ],
             "styles": [
+              "node_modules/remixicon/fonts/remixicon.css",
+              "node_modules/wowjs/css/libs/animate.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+                "node_modules/wow.js/dist/wow.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -98,5 +104,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "fa362959-426c-4a0e-9db4-e44a6b441db7"
   }
 }

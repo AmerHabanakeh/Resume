@@ -1,0 +1,33 @@
+<section id="experience" class="py-20">
+  <div class="container mx-auto px-6">
+    <h2 data-wow-duration="1s" class="text-3xl md:text-4xl font-bold text-center mb-2 wow flipInY">Experience & Education</h2>
+    <p data-wow-duration="1s" class="text-white/60 text-center mb-16 max-w-2xl mx-auto wow flipInY">My professional journey and academic background</p>
+    
+    <div class="timeline-container relative max-w-4xl mx-auto">
+      <div class="timeline-line"></div>
+      @for( item of items;track $index){
+          <div class="wow {{item.type === TimelineItemType.EXPERIENCE?'slideInRight':'slideInLeft'}} timeline-item" [class.exp]="item.type === TimelineItemType.EXPERIENCE" [class.edu]="item.type === TimelineItemType.EDUCATION">
+            <div class="timeline-dot z-10"></div>
+            <div class="glass-panel p-6 rounded-lg">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 p-2 flex items-center justify-center bg-white/5 rounded-lg mr-4">
+                  @if(item.icon.type === IconType.IMAGE){
+                      <img [src]="item.icon.value" alt="" class="w-8 h-8 object-contain rounded-sm">
+
+                  }@else {
+                      <i [class]="item.icon.value + ' ri-2x'" [style.color]="item.icon.color"></i>
+                  }
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold">{{item.title}}</h3>
+                  <p class="text-white/60">{{item.organization}}</p>
+                </div>
+              </div>
+              <p class="text-white/70 mb-2">{{item.period}}</p>
+              <p class="text-white/70">{{item.description}}</p>
+            </div>
+          </div>
+      }
+    </div>
+  </div>
+</section>

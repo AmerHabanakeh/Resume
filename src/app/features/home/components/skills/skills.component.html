@@ -1,0 +1,36 @@
+<section id="skills" class="py-20">
+    <div class="container mx-auto px-6">
+        <h2 data-wow-duration="1s" class="text-3xl md:text-4xl font-bold text-center mb-2 wow flipInY">Skills & Expertise</h2>
+        <p data-wow-duration="1s" class="text-white/60 text-center mb-16 max-w-2xl mx-auto wow flipInY">A comprehensive overview of my technical abilities
+            and proficiency levels</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 mb-16 gap-12">
+            <div class="wow slideInLeft">
+                <h3 class="text-2xl font-bold mb-8 text-primary">Core Competencies</h3>
+                <div class="space-y-8 ">
+                    @for(skill of skills; track $index){
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">{{skill.title}}</span>
+                            <span class="text-primary">{{skill.percent}}%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" #progressFill attr.data-width="{{skill.percent}}%"></div>
+                        </div>
+                    </div>
+                    }                    
+                </div>
+            </div>
+
+            <div class="wow slideInRight">
+                <h3 class="text-2xl font-bold mb-8 text-center">Additional Skills</h3>
+                <div class="tag-cloud">
+                    @for(additionalSkill of additionalSkills;track $index){
+                        <div class="skill-tag">{{additionalSkill}}</div>
+                    }                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

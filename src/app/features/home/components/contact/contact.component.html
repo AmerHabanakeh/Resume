@@ -1,0 +1,145 @@
+<section id="contact" class="py-20 bg-[#0c0c0c]">
+    <div class="container mx-auto px-6">
+        <h2 data-wow-duration="1s" class="text-3xl md:text-4xl font-bold text-center mb-2 wow flipInY">Get In Touch</h2>
+        <p data-wow-duration="1s" class="text-white/60 text-center mb-16 max-w-2xl mx-auto wow flipInY">Have a project in mind or want to discuss
+            opportunities? I'd love to hear from you!</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="wow slideInLeft glass-panel p-8 rounded-lg">
+                <h3 class="text-2xl font-bold mb-6 text-primary">Send Me a Message</h3>
+                <form [formGroup]="contactUsForm" (ngSubmit)="onSubmit()">
+                    <div class="mb-6 form-input-container">
+                        <input type="text" formControlName="name"
+                            class="{{isFieldInvalid('name')?'!border-red-500':''}} form-input w-full px-4 py-3 rounded bg-white/5 border border-white/10 text-white"
+                            id="name" placeholder=" ">
+                        <label for="name" class="form-label">Your Name <span class="text-red-500">*</span></label>
+                    </div>
+
+                    <div class="mb-6 form-input-container">
+                        <input type="email" formControlName="email"
+                            class="form-input w-full px-4 py-3 rounded bg-white/5 border border-white/10 text-white"
+                            id="email" placeholder=" ">
+                        <label for="email" class="form-label">Email Address</label>
+                    </div>
+
+                    <div class="mb-6 form-input-container">
+                        <input type="text" formControlName="title"
+                            class="form-input w-full px-4 py-3 rounded bg-white/5 border border-white/10 text-white"
+                            id="subject" placeholder=" ">
+                        <label for="subject" class="form-label">Subject</label>
+                    </div>
+
+                    <div class="mb-6 form-input-container">
+                        <textarea formControlName="message"
+                            class="{{isFieldInvalid('message')?'!border-red-500':''}} form-input w-full px-4 py-3 rounded bg-white/5 border border-white/10 text-white min-h-[120px]"
+                            id="message" placeholder=" "></textarea>
+                        <label for="message" class="form-label">Your Message <span class="text-red-500">*</span></label>
+                    </div>
+
+                    <button type="submit"
+                        class="magnetic-btn w-full bg-primary text-[#121212] font-medium px-6 py-3 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors">
+                        @if (!isLoading) {
+                        <span>Send Message</span>
+                        } @else {
+                        <div class="flex items-center justify-center gap-2">
+                            <svg class="animate-spin h-5 w-5 text-[#121212]" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                    stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor"
+                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                </path>
+                            </svg>
+                            <span>Sending...</span>
+                        </div>
+                        }
+                    </button>
+                </form>
+            </div>
+
+            <div>
+                <div class="wow slideInRight  glass-panel p-8 rounded-lg mb-8 h-full">
+                    <h3 class="text-2xl font-bold mb-6 text-secondary">Contact Information</h3>
+                    <div class="space-y-16">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center bg-white/5 rounded-full mr-4 mt-1">
+                                <i class="ri-mail-line text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">Email</h4>
+                                <a href="mailto:{{contactInfo.email}}"
+                                    class="text-white/70 hover:text-primary transition-colors">{{contactInfo.email}}</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center bg-white/5 rounded-full mr-4 mt-1">
+                                <i class="ri-phone-line text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">Phone</h4>
+                                <a href="tel:{{contactInfo.phone}}"
+                                    class="text-white/70 hover:text-primary transition-colors">{{contactInfo.phone}}</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center bg-white/5 rounded-full mr-4 mt-1">
+                                <i class="ri-map-pin-line text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">Location</h4>
+                                <p class="text-white/70">{{contactInfo.address}}</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center bg-white/5 rounded-full mr-4 mt-1">
+                                <i class="ri-time-line text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">Working Hours</h4>
+                                <p class="text-white/70">{{contactInfo.workingHours}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="glass-panel p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-6">Connect With Me</h3>
+                    <div class="grid grid-cols-4 gap-4">
+                        <a href="#"
+                            class="w-12 h-12 flex items-center justify-center bg-white/5 rounded-full hover:bg-[#0077B5]/20 text-white/80 hover:text-[#0077B5] transition-colors">
+                            <i class="ri-linkedin-fill ri-lg"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 flex items-center justify-center bg-white/5 rounded-full hover:bg-[#333]/20 text-white/80 hover:text-[#333] transition-colors">
+                            <i class="ri-github-fill ri-lg"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 flex items-center justify-center bg-white/5 rounded-full hover:bg-[#1DA1F2]/20 text-white/80 hover:text-[#1DA1F2] transition-colors">
+                            <i class="ri-twitter-fill ri-lg"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 flex items-center justify-center bg-white/5 rounded-full hover:bg-[#E4405F]/20 text-white/80 hover:text-[#E4405F] transition-colors">
+                            <i class="ri-instagram-fill ri-lg"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 flex items-center justify-center bg-white/5 rounded-full hover:bg-[#FF0000]/20 text-white/80 hover:text-[#FF0000] transition-colors">
+                            <i class="ri-youtube-fill ri-lg"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 flex items-center justify-center bg-white/5 rounded-full hover:bg-[#6E5494]/20 text-white/80 hover:text-[#6E5494] transition-colors">
+                            <i class="ri-codepen-fill ri-lg"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 flex items-center justify-center bg-white/5 rounded-full hover:bg-[#F26522]/20 text-white/80 hover:text-[#F26522] transition-colors">
+                            <i class="ri-stack-overflow-fill ri-lg"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 flex items-center justify-center bg-white/5 rounded-full hover:bg-[#738ADB]/20 text-white/80 hover:text-[#738ADB] transition-colors">
+                            <i class="ri-discord-fill ri-lg"></i>
+                        </a>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</section>

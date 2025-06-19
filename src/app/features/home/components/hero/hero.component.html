@@ -1,0 +1,158 @@
+<section id="about" class="min-h-screen pt-24 relative flex items-center">
+    <div class="hero-particles" #particles id="particles"></div>
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="wow bounceInLeft w-full md:w-1/2 mb-12 md:mb-0">
+                <div class="mb-4">
+                    <span class="text-primary font-medium">Hello, I'm</span>
+                </div>
+                <h1  class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6" id="heroName">
+                    <span class="letter-animation">Amer Habanakeh</span>                    
+                </h1>
+                <!-- <h2 class="text-xl md:text-3xl font-medium text-white/80 mb-8">Frontend Developer</h2> -->
+                <!-- Typewriter Effect -->
+                <ngx-typed-js [strings]="['Front-end Developer', 'Angular Javascript Developer']"
+                    [typeSpeed]="50" [backSpeed]="30" [loop]="true" class="text-xl md:text-2xl font-medium text-white/80 mb-8">
+                    <span class="typing"></span>
+                </ngx-typed-js>
+                <p class="text-white/60 text-lg mb-10 max-w-xl mt-4">
+                    I craft exceptional digital experiences with clean code and cutting-edge technologies. Specializing
+                    in interactive web applications with a focus on performance and accessibility.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="/home#projects"
+                        class="bg-primary text-[#121212] font-medium px-6 py-3 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors">View
+                        My Work</a>
+                    <a href="/home#contact"
+                        class="bg-transparent border border-white/20 text-white hover:border-primary hover:text-primary transition-colors px-6 py-3 !rounded-button whitespace-nowrap">Get
+                        In Touch</a>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 flex justify-center">
+                <div
+                data-wow-delay="500ms"    
+                class="wow bounceInRight relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg shadow-primary/20">
+                    <img src="/images/personal-img2.png" alt="Ahmad Al-Hamwi" class="w-full brightness-105 h-full object-cover object-top">
+                </div>
+            </div>
+        </div>
+        <div class="max-md:hidden absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white/60 cursor-pointer scroll-down">
+            <a href="/home#skills" class="w-8 h-12 flex items-center justify-center">
+                <i class="ri-arrow-down-line ri-xl"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section  class="py-16 bg-[#0c0c0c]">
+    <div data-wow-duration="2s" class="wow slideInRight container mx-auto px-6 mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-2">Tech Stack</h2>
+        <p class="text-white/60 text-center mb-12 max-w-2xl mx-auto">The technologies I use to build modern, responsive, and interactive web applications</p>
+    </div>
+    <div data-wow-duration="2s" class="wow slideInRight tech-carousel">
+        <div class="tech-track">
+            @for(item of techStackItems;track $index){
+                <div class="tech-item flex items-center justify-center mx-8 my-4">
+                    <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-white/5 rounded-lg p-4">
+                        @if(item.icon.endsWith('.png')){
+                            <img class="w-12 aspect-square object-cover" src="{{item.icon}}" alt="{{item.title}}">
+                        }@else {
+                            <i class="{{item.icon}} ri-3x" [style.color]="item.color"></i>
+                        }
+                    </div>
+                    <span class="ml-4 text-lg font-medium">{{item.title}}</span>
+                </div>
+            }
+            <!-- <div class="tech-item flex items-center justify-center mx-8 my-4">
+                <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-white/5 rounded-lg p-4">
+                    <i class="ri-css3-fill ri-3x text-[#1572B6]"></i>
+                </div>
+                <span class="ml-4 text-lg font-medium">CSS3</span>
+            </div>
+            <div class="tech-item flex items-center justify-center mx-8 my-4">
+                <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-white/5 rounded-lg p-4">
+                    <i class="ri-javascript-fill ri-3x text-[#F7DF1E]"></i>
+                </div>
+                <span class="ml-4 text-lg font-medium">JavaScript</span>
+            </div>
+            <div class="tech-item flex items-center justify-center mx-8 my-4">
+                <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-white/5 rounded-lg p-4">
+                    <i class="ri-reactjs-fill ri-3x text-[#61DAFB]"></i>
+                </div>
+                <span class="ml-4 text-lg font-medium">React</span>
+            </div>
+            <div class="tech-item flex items-center justify-center mx-8 my-4">
+                <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-white/5 rounded-lg p-4">
+                    <i class="ri-angularjs-fill ri-3x text-[#DD0031]"></i>
+                </div>
+                <span class="ml-4 text-lg font-medium">Angular</span>
+            </div>
+            <div class="tech-item flex items-center justify-center mx-8 my-4">
+                <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-white/5 rounded-lg p-4">
+                    <i class="ri-vuejs-fill ri-3x text-[#4FC08D]"></i>
+                </div>
+                <span class="ml-4 text-lg font-medium">Vue.js</span>
+            </div>
+            <div class="tech-item flex items-center justify-center mx-8 my-4">
+                <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-white/5 rounded-lg p-4">
+                    <i class="ri-typescript-fill ri-3x text-[#3178C6]"></i>
+                </div>
+                <span class="ml-4 text-lg font-medium">TypeScript</span>
+            </div>
+            <div class="tech-item flex items-center justify-center mx-8 my-4">
+                <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-white/5 rounded-lg p-4">
+                    <i class="ri-git-branch-fill ri-3x text-[#F05032]"></i>
+                </div>
+                <span class="ml-4 text-lg font-medium">Git</span>
+            </div>
+            <div class="tech-item flex items-center justify-center mx-8 my-4">
+                <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-white/5 rounded-lg p-4">
+                    <i class="ri-html5-fill ri-3x text-[#E34F26]"></i>
+                </div>
+                <span class="ml-4 text-lg font-medium">HTML5</span>
+            </div>
+            <div class="tech-item flex items-center justify-center mx-8 my-4">
+                <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-white/5 rounded-lg p-4">
+                    <i class="ri-css3-fill ri-3x text-[#1572B6]"></i>
+                </div>
+                <span class="ml-4 text-lg font-medium">CSS3</span>
+            </div>
+            <div class="tech-item flex items-center justify-center mx-8 my-4">
+                <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-white/5 rounded-lg p-4">
+                    <i class="ri-javascript-fill ri-3x text-[#F7DF1E]"></i>
+                </div>
+                <span class="ml-4 text-lg font-medium">JavaScript</span>
+            </div>
+            <div class="tech-item flex items-center justify-center mx-8 my-4">
+                <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-white/5 rounded-lg p-4">
+                    <i class="ri-reactjs-fill ri-3x text-[#61DAFB]"></i>
+                </div>
+                <span class="ml-4 text-lg font-medium">React</span>
+            </div>
+            <div class="tech-item flex items-center justify-center mx-8 my-4">
+                <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-white/5 rounded-lg p-4">
+                    <i class="ri-angularjs-fill ri-3x text-[#DD0031]"></i>
+                </div>
+                <span class="ml-4 text-lg font-medium">Angular</span>
+            </div>
+            <div class="tech-item flex items-center justify-center mx-8 my-4">
+                <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-white/5 rounded-lg p-4">
+                    <i class="ri-vuejs-fill ri-3x text-[#4FC08D]"></i>
+                </div>
+                <span class="ml-4 text-lg font-medium">Vue.js</span>
+            </div>
+            <div class="tech-item flex items-center justify-center mx-8 my-4">
+                <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-white/5 rounded-lg p-4">
+                    <i class="ri-typescript-fill ri-3x text-[#3178C6]"></i>
+                </div>
+                <span class="ml-4 text-lg font-medium">TypeScript</span>
+            </div>
+            <div class="tech-item flex items-center justify-center mx-8 my-4">
+                <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center bg-white/5 rounded-lg p-4">
+                    <i class="ri-git-branch-fill ri-3x text-[#F05032]"></i>
+                </div>
+                <span class="ml-4 text-lg font-medium">Git</span>
+            </div> -->
+        </div>      
+    </div>
+</section>

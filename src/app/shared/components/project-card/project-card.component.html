@@ -1,0 +1,33 @@
+<div  class="project-card bg-[#161616] rounded-lg overflow-hidden">
+    <div class="relative h-56">
+        <img ngSrc="/images/projects/{{project().image}}" fill alt="{{project().name}}" class="w-full h-full object-cover">
+        <div class="absolute top-4 right-4 flex space-x-2">
+            <!-- <a href="#" target="_blank"
+                class="w-8 h-8 flex items-center justify-center bg-[#121212]/80 rounded-full text-white/80 hover:text-primary transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/20">
+                <i class="ri-github-fill"></i>
+            </a> -->
+            <a href="{{project().publishUrl}}" target="_blank"
+                class="w-8 h-8 flex items-center justify-center bg-[#121212]/80 rounded-full text-white/80 hover:text-primary transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-primary/20">
+                <i class="ri-external-link-line"></i>
+            </a>
+        </div>
+        <div class="project-overlay absolute inset-0 flex items-end p-6">
+            <div>
+                <span class="text-xs font-medium text-primary">{{project().type}}</span>
+                <h3 class="text-xl font-bold mt-1">{{project().name}}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="p-6">
+        <p class="text-white/70 mb-4">{{project().description}}</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+            @for(chip of project().tags;track $index){
+            <span class="text-xs {{(index()! % 2) === 0?'bg-primary/10 text-primary':'bg-secondary/10 text-secondary'}} px-2 py-1 rounded-full">{{chip}}</span>
+            }
+        </div>
+        <!-- <a href="#" class="text-primary hover:text-secondary transition-colors font-medium flex items-center">
+            View Case Study
+            <i class="ri-arrow-right-line ml-1"></i>
+        </a> -->
+    </div>
+</div>
