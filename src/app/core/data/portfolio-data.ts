@@ -248,6 +248,31 @@ export const portfolioData: PortfolioData = {
                 "Content Contribution",
             ]
         },
+        {
+            name: 'Samaoman',
+            description: `
+            The Invest Hub platform is a unified system providing five key portals: 
+            Investment Opportunities for browsing and investing in projects, 
+            a Business Academy offering educational content, 
+            a Business Clinic delivering personalized consulting, 
+            a Visitor section serving as the public gateway, 
+            and an Admin Dashboard that manages everything—from listings and content to users, 
+            appointments, analytics, and finances. Together, 
+            these portals offer a seamless user experience for exploration, learning, consulting, investment, and backend management
+            `,
+            image: "samaoman-logo.png",
+            publishUrl: 'https://invest-hub.net/#/',
+            type: 'Website',
+            tags: [
+                "Angular",
+                "invest",
+                "academy",
+                "business clinic",
+                "consulting service",
+                "financial consulting services"
+            ]
+            
+        }
 
     ],
     timeLineItems: [

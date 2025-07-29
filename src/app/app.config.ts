@@ -13,7 +13,7 @@ export const appConfig: ApplicationConfig = {
     ),
     provideHttpClient(),
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideNetlifyLoader('https://ahmad-alhamwi-portfolio.netlify.app'),
+    provideNetlifyLoader('https://amer-habanakeh-portfolio.netlify.app'),
     provideRouter(routes)
   ]
 };

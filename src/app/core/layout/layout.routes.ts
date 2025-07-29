@@ -1,6 +1,7 @@
 import { Routes } from "@angular/router";
 import { MainLayoutComponent } from "./components/main-layout/main-layout.component";
 import { homeRoutes } from "../../features/home/home.routes";
+import { authRoute } from "../auth/auth.routes";
 
 export const layoutRoutes:Routes = [
     {
@@ -15,7 +16,8 @@ export const layoutRoutes:Routes = [
             {
                 path:'home',
                 children:homeRoutes
-            }
+            },
+            
         ]
     },    
 ]
